@@ -76,7 +76,7 @@ const listarEstudiantesTool = tool({
     description: "Usa esta función para mostrar todos los estudiantes",
     parameters: z.object({}),
     execute: () => {
-        return;
+        return Estudiantes.listarEstudiantes();
     },
 });
 
