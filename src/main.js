@@ -2,8 +2,8 @@ import { tool, agent } from "llamaindex";
 import { Ollama } from "@llamaindex/ollama";
 import { z } from "zod";
 import { empezarChat } from "./lib/cli-chat.js";
-import { Estudiantes } from "./lib/estudiantes.js";
-
+import { Estudiantes} from "./lib/estudiantes.js";
+ 
 // Configuración
 const DEBUG = true;
 
@@ -28,7 +28,7 @@ Respondé de forma clara y breve.
 const ollamaLLM = new Ollama({
     model: "qwen3:1.7b",
     temperature: 0.75,
-    timeout: 2 * 60 * 1000, // Timeout de 2 minutos
+    timeout: 4 * 60 * 1000, // Timeout de 2 minutos
 });
 
 
@@ -40,8 +40,7 @@ const buscarPorNombreTool = tool({
         nombre: z.string().describe("El nombre del estudiante a buscar"),
     }),
     execute: ({ nombre }) => {
-        // Tu código aquí
-    },
+return;    },
 });
 
 // TODO: Implementar la Tool para buscar por apellido
@@ -66,7 +65,7 @@ const agregarEstudianteTool = tool({
         curso: z.string().describe("El curso del estudiante (ej: 4A, 4B, 5A)"),
     }),
     execute: ({ nombre, apellido, curso }) => {
-        return  Estudiantes.agregarEstudiante(nombre, apellido, curso );
+        return  estudiantes.agregarEstudiante(nombre, apellido, curso );
     },
 });
 
@@ -76,7 +75,7 @@ const listarEstudiantesTool = tool({
     description: "Usa esta función para mostrar todos los estudiantes",
     parameters: z.object({}),
     execute: () => {
-        return Estudiantes.listarEstudiantes();
+        return estudiantes.listarEstudiantes();
     },
 });
 

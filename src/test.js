@@ -1,4 +1,5 @@
 import { Estudiantes } from "./lib/estudiantes.js";
+console.log("buscando estudianets")
 
 const estud = new Estudiantes();
 estud.cargarEstudiantesDesdeJson();
