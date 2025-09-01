@@ -50,6 +50,7 @@ class Estudiantes {
   }
 
   buscarEstudiantePorApellido(apellido) {
+    if (!apellido) return [];
     return this.estudiantes.filter(est => est.apellido.toLowerCase() === apellido.toLowerCase());
   }
 
