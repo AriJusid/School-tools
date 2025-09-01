@@ -64,6 +64,26 @@
       "nombre": "Lu",
       "apellido": "Dom",
       "curso": "5D"
+    },
+    {
+      "nombre": "Agus",
+      "apellido": "Gusa",
+      "curso": "5C"
+    },
+    {
+      "nombre": "Thiago",
+      "apellido": "Tjor",
+      "curso": "5A"
+    },
+    {
+      "nombre": "Aruuu",
+      "apellido": "Jujuu",
+      "curso": "5B"
+    },
+    {
+      "nombre": "Ari",
+      "apellido": "Jusid",
+      "curso": "5D"
     }
   ]
 }

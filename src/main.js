@@ -10,7 +10,6 @@ const DEBUG = true;
 // Instancia de la clase Estudiantes
 const estudiantes = new Estudiantes();
 estudiantes.cargarEstudiantesDesdeJson();
-console.log("estudian", estudiantes)
 
 // System prompt básico
 const systemPrompt = `

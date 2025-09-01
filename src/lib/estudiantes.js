@@ -29,9 +29,21 @@ class Estudiantes {
   }
 
   agregarEstudiante(nombre, apellido, curso) {
+    var repetido = false
+
+    this.estudiantes.map((est) => {
+      if(est.nombre == nombre && est.apellido == apellido){
+        repetido = true
+      }
+    })
+
+    if(!repetido){
     this.estudiantes.push({ nombre, apellido, curso });
     this.guardarEstudiantes();
-  }
+    }else{
+      console.log("Ya existe ese estudiante")
+    }
+    return repetido? "oh no" : "oh si"};
 
   buscarEstudiantePorNombre(nombre) {
     return this.estudiantes.filter(est => est.nombre.toLowerCase() === nombre.toLowerCase());
